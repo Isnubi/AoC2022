@@ -1,0 +1,5 @@
+total1, total2, lines = 0, 0, open('input').readlines()
+for line in lines:
+    if (int(line.split(',')[0].split('-')[0]) >= int(line.split(',')[1].split('-')[0]) and int(line.split(',')[0].split('-')[1]) <= int(line.split(',')[1].split('-')[1])) or (int(line.split(',')[1].split('-')[0]) >= int(line.split(',')[0].split('-')[0]) and int(line.split(',')[1].split('-')[1]) <= int(line.split(',')[0].split('-')[1])):total1+=1
+    if (int(line.split(',')[0].split('-')[1]) == int(line.split(',')[1].split('-')[0])) or (int(line.split(',')[0].split('-')[0]) == int(line.split(',')[1].split('-')[1])) or (int(line.split(',')[1].split('-')[0]) in range(int(line.split(',')[0].split('-')[0]), int(line.split(',')[0].split('-')[1]))) or (int(line.split(',')[1].split('-')[1]) in range(int(line.split(',')[0].split('-')[0]), int(line.split(',')[0].split('-')[1])) or (int(line.split(',')[0].split('-')[0]) in range(int(line.split(',')[1].split('-')[0]), int(line.split(',')[1].split('-')[1]))) or (int(line.split(',')[0].split('-')[1]) in range(int(line.split(',')[1].split('-')[0]), int(line.split(',')[1].split('-')[1])))):total2+=1
+print(f"Part one: {total1}\nPart two: {total2}")
